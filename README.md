@@ -12,7 +12,7 @@ npm install
 create .env file and paste .env.example in
 ### 6 - Database
 Create MySQL database name "crudlaravue" <br/>
-Set your mysql config in .env if it's different.<br/><br/>
+Set your mysql config in .env if it's different.<br/>
 
 #### Database structure 
 User contains clients and Installator, the client role in the table user "CUSTOMER" and for the Installator is "INSTALLATOR"<br/>

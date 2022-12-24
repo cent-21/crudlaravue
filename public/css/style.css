@@ -259,7 +259,7 @@ textarea.form-control-:focus {
 
 .content {
     background-color: #EEF9F0;
-    min-height: 100vh !important;
+    height: 100vh !important;
     overflow: auto;
 }
 

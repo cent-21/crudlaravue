@@ -1,8 +1,12 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import Installation from "../pages/Installation/Index.vue"
+import Index from "../pages/Installation/Index.vue"
+import Edit from "../pages/Installation/Edit.vue"
+import Create from "../pages/Installation/Create.vue"
 
 const routes = [
-    { path: '/', name: "installations", component: Installation },
+    { path: '/', name: "index", component: Index },
+    { path: '/create', name: "create", component: Create },
+    { path: '/edit/:id', name: "edit", component: Edit },
 ]
 
 

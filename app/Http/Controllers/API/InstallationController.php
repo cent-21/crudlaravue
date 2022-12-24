@@ -51,7 +51,8 @@ class InstallationController extends Controller
      */
     public function show(Installation $installation)
     {
-        return new InstallationResource($installation->with(["client", "installator"])->first());
+        $installation = Installation::where('id', $installation->id)->with(["client", "installator"])->first();
+        return new InstallationResource($installation);
     }
 
     /**
