@@ -19,9 +19,4 @@ class User extends Authenticatable
      */
     protected $guarded = [];
 
-    public function installations() {
-        return $this->hasMany(User::class);
-    }
-
-
 }

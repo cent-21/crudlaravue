@@ -21,7 +21,7 @@
                 <div class="col-lg-6">
                     <div class="bg-white shadow-sm row py-3">
                         <div class="col-sm-7">
-                            <h4 class="text-black ps-5 m-0">Chiffre d'affaire</h4>
+                            <h5 class="text-black ps-5 m-0">Chiffre d'affaire</h5>
                         </div>
                         <div class="col-sm-5 text-black fw-bold text-end">
                             62 345€
@@ -31,7 +31,7 @@
                 <div class="col-lg-6">
                     <div class="bg-white ps-5 shadow-sm row py-3">
                         <div class="col-sm-7">
-                            <h4 class="text-black m-0">Nombre de clients</h4>
+                            <h5 class="text-black m-0">Nombre de clients</h5>
                         </div>
                         <div class="col-sm-5 pe-5 text-black fw-bold text-end">
                             124
@@ -50,17 +50,28 @@
 
 
         <div class="bg-white shadow-sm mt-3 px-5 py-2">
-            <table>
+            <table class="table table-responsive-md fs-6 table-bordered table-lg">
                 <thead>
                     <tr>
                         <table><input type="checkbox" name="" id=""></table>
                         <th>Date</th>
+                        <th>Nom et Prénoms</th>
+                        <th>Téléphone</th>
+                        <th>Installateur</th>
+                        <th>Statut</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
+                <tbody>
+                    <tr v-for="installation in installations" :key="installation.id">
+                        <td><input type="checkbox" name="" id=""></td>
+                        <td>{{ installation.created_at }}</td>
+                        <td>{{ installation.created_at }}</td>
+                        <td>{{ installation.created_at }}</td>
+                        <td>{{ installation.created_at }}</td>
+                    </tr>
+                </tbody>
             </table>
-            <div v-for="installation in installations" :key="installation.id">
-                {{ installation }}
-            </div>
         </div>
 
 
@@ -89,7 +100,10 @@
                 console.log('====================================');
                 console.log(response.data);
                 console.log('====================================');
-                this.installations = response.data
+                this.installations = response.data.data
+                console.log('====================================');
+                console.log(this.installations);
+                console.log('====================================');
             })
         }
     }

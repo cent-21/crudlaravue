@@ -17,7 +17,7 @@ class InstallationController extends Controller
      */
     public function index()
     {
-        $installations = Installation::all();
+        $installations = Installation::with(["client", "installator"])->get();
         return InstallationResource::collection($installations);
     }
 
@@ -51,7 +51,7 @@ class InstallationController extends Controller
      */
     public function show(Installation $installation)
     {
-        return new InstallationResource($installation);
+        return new InstallationResource($installation->with(["client", "installator"])->first());
     }
 
     /**
@@ -75,7 +75,7 @@ class InstallationController extends Controller
     public function update(InstallationRequest $request, Installation $installation)
     {
         $installation->update($request->all());
-        return new InstallationResource($installation);
+        return new InstallationResource($installation->with(["client", "installator"])->first());
     }
 
     /**
