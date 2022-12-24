@@ -50,6 +50,14 @@
 
 
         <div class="bg-white shadow-sm mt-3 px-5 py-2">
+            <table>
+                <thead>
+                    <tr>
+                        <table><input type="checkbox" name="" id=""></table>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+            </table>
             <div v-for="installation in installations" :key="installation.id">
                 {{ installation }}
             </div>
